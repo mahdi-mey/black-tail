@@ -1,4 +1,5 @@
 const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints > 0;
+const circles = document.querySelectorAll('.circle')
 
 if (!isTouchDevice) {
 
@@ -6,7 +7,6 @@ const coords = {
     x: 0,
     y: 0
 }
-const circles = document.querySelectorAll('.circle')
 
 circles.forEach((circle, ) => {
     circle.x = 0
@@ -43,5 +43,8 @@ function animateCircle() {
 
 animateCircle()
 } else {
+    circles.forEach(circle => {
+        circle.style.display = 'none'
+    })
     alert('The animation is not supported on touch devices.');
-  }
+}
