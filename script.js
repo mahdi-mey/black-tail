@@ -1,3 +1,7 @@
+const isTouchDevice = 'ontouchstart' in window || navigator.msMaxTouchPoints > 0;
+
+if (!isTouchDevice) {
+
 const coords = {
     x: 0,
     y: 0
@@ -38,3 +42,6 @@ function animateCircle() {
 }
 
 animateCircle()
+} else {
+    alert('The animation is not supported on touch devices.');
+  }
